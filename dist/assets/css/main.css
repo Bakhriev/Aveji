@@ -122,6 +122,30 @@ body ::selection {
   overflow: hidden !important;
 }
 
+@keyframes visibleAnim {
+  0% {
+    transform: translateX(-500px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+@keyframes visibleAnimReverse {
+  0% {
+    transform: translateX(500px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+@keyframes visibleTopAnim {
+  0% {
+    transform: translateY(-500px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
 .overlay {
   position: fixed;
   top: 0;
@@ -203,6 +227,7 @@ body ::selection {
 
 .header {
   padding: 11px 0;
+  animation: visibleTopAnim 700ms;
 }
 .header__inner {
   display: flex;
@@ -324,6 +349,7 @@ body ::selection {
   color: #212529;
   max-width: 794px;
   text-transform: uppercase;
+  animation: visibleAnim 600ms;
 }
 @media screen and (max-width: 992px) {
   .hero__title {
@@ -359,6 +385,12 @@ body ::selection {
     flex-direction: column;
     gap: 0;
   }
+}
+.examples__column:first-child {
+  animation: visibleAnim 1s;
+}
+.examples__column:last-child {
+  animation: visibleAnimReverse 1.2s;
 }
 .examples__column:first-child {
   display: flex;
