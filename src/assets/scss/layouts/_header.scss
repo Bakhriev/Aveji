@@ -1,0 +1,118 @@
+@import '../mixins/disable-mob-hover';
+@import '../vars';
+
+.header {
+  padding: 11px 0;
+  animation: visibleTopAnim 700ms;
+
+  // .header__inner
+
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+    @media screen and (max-width: 768px) {
+      align-items: center;
+    }
+  }
+
+  // .header__logo
+
+  &__logo {
+    margin-top: 10px;
+    width: 47px;
+    height: 50px;
+  }
+
+  // .header__navigation
+
+  &__navigation {
+    display: flex;
+    @media screen and (max-width: 768px) {
+      position: fixed;
+      z-index: 10;
+      flex-direction: column;
+      gap: 15px;
+      align-items: center;
+      text-align: center;
+      right: 0;
+      top: 0;
+      transform: translateX(1000px);
+      width: 320px;
+      height: 100%;
+      padding-top: 70px;
+      background-color: $primary;
+      a {
+        color: #fff;
+      }
+
+      transition: transform 0.3s;
+    }
+    @media screen and (max-width: 375px) {
+      width: 100%;
+    }
+    &.active {
+      transform: translateX(0);
+    }
+  }
+
+  // .header__phone
+
+  &__phone {
+    margin-left: 212px;
+    font-size: 18px;
+    line-height: 21px;
+    color: $primary;
+    @media screen and (max-width: 992px) {
+      margin-left: 100px;
+    }
+    @media screen and (max-width: 768px) {
+      margin-left: 0;
+    }
+  }
+}
+
+.nav {
+  // .nav__list
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  // .nav__link
+
+  &__link {
+    position: relative;
+
+    color: $primary;
+    font-size: 18px;
+    line-height: 21px;
+
+    transition: color 0.2s ease-in-out;
+
+    @include hover {
+      color: rgb(4, 143, 229);
+      &::after {
+        transform: scale(1);
+      }
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: -2px;
+
+      height: 2px;
+      width: 100%;
+
+      background: rgb(4, 143, 229);
+      border-radius: 5px;
+      transform: scale(0);
+      transition: transform 200ms ease-in-out;
+    }
+  }
+}
+.burger {
+}

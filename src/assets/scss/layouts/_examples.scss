@@ -1,0 +1,65 @@
+@import '../vars';
+
+.examples {
+  padding-bottom: 120px;
+  @media screen and (max-width: 768px) {
+    padding-bottom: 48px;
+  }
+  // .examples__inner
+
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    @media screen and (max-width: 768px) {
+      flex-direction: column;
+      gap: 0;
+    }
+  }
+
+  // .examples__column
+
+  &__column {
+    &:first-child {
+      animation: visibleAnim 1s;
+    }
+    &:last-child {
+      animation: visibleAnimReverse 1.2s;
+    }
+    &:first-child {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      @media screen and (max-width: 768px) {
+        img {
+          display: none;
+        }
+      }
+    }
+    img {
+      margin-top: auto;
+    }
+  }
+
+  // .examples__text
+
+  &__text {
+    max-width: 410px;
+    font-size: 20px;
+    line-height: 140%;
+    color: $primary;
+    @media screen and (max-width: 768px) {
+      margin-bottom: 24px;
+    }
+  }
+
+  // .examples__btn
+
+  &__btn {
+    margin-bottom: 26px;
+    display: none;
+    @media screen and (max-width: 768px) {
+      display: inline-block;
+    }
+  }
+}

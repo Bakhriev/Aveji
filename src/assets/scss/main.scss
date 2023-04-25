@@ -1,0 +1,18 @@
+@import './base/reset';
+
+@import './global';
+@import './vars';
+
+//Components
+@import './components/overlay';
+@import './components/burger';
+
+// Layouts
+@import './layouts/header';
+@import './layouts/hero';
+@import './layouts/examples';
+@import './layouts/about';
+@import './layouts/projects';
+@import './layouts/reviews';
+@import './layouts/join';
+@import './layouts/footer';

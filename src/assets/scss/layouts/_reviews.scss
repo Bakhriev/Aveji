@@ -1,0 +1,73 @@
+@import '../vars';
+
+.reviews {
+  padding-bottom: 120px;
+  @media screen and (max-width: 768px) {
+    padding-bottom: 48px;
+  }
+  // .reviews__inner
+
+  &__inner {
+  }
+
+  // .reviews__title
+
+  &__title {
+    margin-bottom: 32px;
+    @media screen and (max-width: 768px) {
+      font-size: 28px;
+      line-height: 39px;
+    }
+  }
+
+  // .reviews__cards
+
+  &__cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+
+  // .reviews__card
+
+  &__card {
+    flex: 1 1 440px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    border: 1px solid #000000;
+    padding: 45px 40px 60px;
+
+    @media screen and (max-width: 768px) {
+      padding: 36px 32px 36px;
+    }
+  }
+
+  // .reviews__img
+
+  &__img {
+    margin-bottom: 32px;
+  }
+
+  // .reviews__author
+
+  &__author {
+    margin-bottom: 20px;
+
+    font-family: 'Helvetica';
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 25px;
+    color: $primary;
+  }
+
+  // .reviews__text
+
+  &__text {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 140%;
+    color: $primary;
+  }
+}

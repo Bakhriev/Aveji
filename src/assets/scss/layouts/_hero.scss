@@ -1,0 +1,47 @@
+@import '../vars';
+
+.hero {
+  padding-top: 40px;
+  padding-bottom: 30px;
+  // .hero__inner
+
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    @media screen and (max-width: 768px) {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 20px;
+    }
+  }
+
+  // .hero__title
+
+  &__title {
+    font-family: 'Helvetica';
+    font-weight: normal;
+    font-size: 72px;
+    line-height: 120%;
+    color: $primary;
+    max-width: 794px;
+    text-transform: uppercase;
+    animation: visibleAnim 600ms;
+    @media screen and (max-width: 992px) {
+      font-size: 28px;
+      max-width: 520px;
+    }
+    @media screen and (max-width: 768px) {
+    }
+  }
+
+  // .hero__order
+
+  &__order {
+    margin-bottom: 15px;
+    margin-right: 20px;
+    @media screen and (max-width: 768px) {
+      display: none;
+    }
+  }
+}

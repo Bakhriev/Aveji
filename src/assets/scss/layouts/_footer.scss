@@ -1,0 +1,70 @@
+@import '../vars';
+@import '../mixins/disable-mob-hover';
+
+.footer {
+  padding: 10px 0;
+  // .footer__inner
+
+  &__inner {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 40px;
+
+    @media screen and (max-width: 768px) {
+      flex-direction: column-reverse;
+      align-items: center;
+      text-align: center;
+      gap: 24px;
+    }
+  }
+
+  // .footer__item
+
+  &__item {
+  }
+
+  // .footer__copy
+
+  &__copy {
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 21px;
+    text-transform: uppercase;
+    color: $primary;
+  }
+
+  // .footer__politic
+
+  &__politic {
+    line-height: 140%;
+    color: $primary;
+    transition: color 0.3s;
+
+    @include hover {
+      color: aqua;
+    }
+  }
+
+  // .footer__social
+
+  &__social {
+    display: flex;
+    gap: 40px;
+  }
+
+  // .footer__link
+
+  &__link {
+    font-size: 18px;
+    line-height: 21px;
+    text-transform: uppercase;
+    color: $primary;
+    transition: color 0.3s;
+
+    @include hover {
+      color: aqua;
+    }
+  }
+}

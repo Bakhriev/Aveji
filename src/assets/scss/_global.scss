@@ -1,0 +1,84 @@
+@import './vars';
+@import './fonts/fonts';
+@import './mixins/disable-mob-hover';
+
+// Body
+body {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  ::selection {
+    background-color: aqua;
+  }
+}
+
+// Container
+.container {
+  margin: 0 auto;
+
+  max-width: 1400px;
+  padding: 0 15px;
+}
+
+// Wrapper
+.wrapper {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+.order-btn {
+  display: inline-block;
+  border-bottom: 1px solid $primary;
+  font-size: 16px;
+  text-transform: uppercase;
+  transition: color 0.3s, border-bottom 0.3s;
+  @include hover {
+    color: #ddd7c0;
+    border-bottom-color: #ddd7c0;
+  }
+  &:active {
+    color: #cbc6b2;
+    border-bottom-color: #cbc6b2;
+  }
+}
+
+.section-title {
+  font-family: 'Helvetica';
+  font-weight: 400;
+  font-size: 48px;
+  line-height: 66px;
+  color: $primary;
+}
+
+.scroll-lock {
+  overflow: hidden !important;
+}
+
+@keyframes visibleAnim {
+  0% {
+    transform: translateX(-500px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes visibleAnimReverse {
+  0% {
+    transform: translateX(500px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes visibleTopAnim {
+  0% {
+    transform: translateY(-500px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
