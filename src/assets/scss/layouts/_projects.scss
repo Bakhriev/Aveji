@@ -74,6 +74,11 @@
     opacity: 0;
     visibility: hidden;
     transition: 0.2s all;
+    @media screen and (max-width: 992px) {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
 
     @include hover {
       &::after {

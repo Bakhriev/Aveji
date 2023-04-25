@@ -21,13 +21,23 @@
 
   &__row {
     display: flex;
-    gap: 186px;
+    &:first-child {
+      justify-content: space-between;
+      padding-right: 19vw;
+      gap: 140px;
+    }
     @media screen and (max-width: 992px) {
       gap: 50px;
+      &:first-child {
+        gap: 220px;
+      }
     }
     @media screen and (max-width: 768px) {
       flex-direction: column;
       gap: 20px;
+      &:first-child {
+        gap: 20px;
+      }
     }
   }
 

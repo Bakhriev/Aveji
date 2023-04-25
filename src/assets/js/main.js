@@ -7,7 +7,7 @@ function burgerMenu() {
     burger.classList.toggle('active')
     navigation.classList.toggle('active')
     overlay.classList.toggle('active')
-    document.body.classList.add('scroll-lock')
+    document.body.classList.toggle('scroll-lock')
   })
 
   overlay.addEventListener('click', () => {
@@ -17,18 +17,18 @@ function burgerMenu() {
     document.body.classList.remove('scroll-lock')
   })
 
-  // window.addEventListener("resize", () => {
-  // 	if (window.innerWidth > 991.98) {
-  // 		burger.classList.remove("active")
-  // 		navigation.classList.remove("active")
-  // 		overlay.classList.remove("active")
-  // 	}
-  // })
+  window.addEventListener('resize', () => {
+    if (window.innerWidth > 991.98) {
+      burger.classList.remove('active')
+      navigation.classList.remove('active')
+      overlay.classList.remove('active')
+    }
+  })
 }
 burgerMenu()
 
 let options = {
-  threshold: 0.4,
+  threshold: 0.3,
 }
 
 const onVisible = (entries, observer) => {
