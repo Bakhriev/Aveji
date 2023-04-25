@@ -26,3 +26,25 @@ function burgerMenu() {
   // })
 }
 burgerMenu()
+
+let options = {
+  threshold: 0.4,
+}
+
+const onVisible = (entries, observer) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      entry.target.querySelectorAll('.about__column').forEach((col) => {
+        col.classList.add('visible')
+      })
+    }
+  })
+}
+
+const aboutRow = document.querySelectorAll('.about__row')
+
+let observer = new IntersectionObserver(onVisible, options)
+
+aboutRow.forEach((col) => {
+  observer.observe(col)
+})
